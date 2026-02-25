@@ -54,6 +54,3 @@ QuantumQuill is a modern, full-stack knowledge platform built for developers, en
    npm run dev
    ```
 3. Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## 📝 Credits
-Built as a Full-Stack Technical Assignment with a focus on architecture, security, and premium user experience.
