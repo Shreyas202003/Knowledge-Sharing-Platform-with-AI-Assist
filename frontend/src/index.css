@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F172A;
+  --color-primary-foreground: #F8FAFC;
+  --color-secondary: #1E293B;
+  --color-secondary-foreground: #94A3B8;
+  --color-tertiary: #334155;
+  --color-accent-primary: #F59E0B;
+  --color-accent-secondary: #10B981;
+  --color-accent-tertiary: #8B5CF6;
+  --color-accent-sky: #38BDF8;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-primary-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold text-primary-foreground;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    @apply bg-accent-primary/30 text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-tertiary rounded-full hover:bg-secondary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-primary text-primary px-6 py-2 rounded-md font-semibold transition-all hover:bg-[#D97706] active:bg-[#B45309];
+  }
+
+  .btn-secondary {
+    @apply border border-accent-primary text-accent-primary px-6 py-2 rounded-md font-semibold transition-all hover:bg-accent-primary/10;
+  }
+
+  .btn-ghost {
+    @apply text-secondary-foreground hover:bg-secondary hover:text-primary-foreground px-4 py-2 rounded-md transition-all;
+  }
+
+  .card-premium {
+    @apply bg-secondary border border-tertiary rounded-xl p-6 transition-all hover:shadow-lg hover:border-accent-primary/20 hover:-translate-y-1;
+  }
+
+  .input-premium {
+    @apply bg-tertiary border border-tertiary rounded-lg px-4 py-2 text-primary-foreground placeholder:text-slate-500 focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/50 transition-all;
+  }
+
+  .ai-panel {
+    @apply border border-accent-tertiary bg-secondary/50 backdrop-blur-sm rounded-xl p-4 shadow-glow;
+  }
+}
+
+.article-content {
+  @apply max-w-prose mx-auto text-lg leading-relaxed;
+}
+
+.article-content p {
+  @apply mb-4;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-accent-primary bg-accent-primary/10 pl-6 py-4 my-6 italic;
+}
+
+.article-content pre {
+  @apply bg-[#020617] p-4 rounded-lg my-6 overflow-x-auto border border-tertiary;
+}
+
+.article-content code {
+  @apply font-mono text-accent-secondary;
+}
